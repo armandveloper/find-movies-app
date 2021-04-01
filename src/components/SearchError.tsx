@@ -12,8 +12,8 @@ function SearchError({
 }: SearchErrorProps) {
 	const img =
 		type === 'BackendError'
-			? '/img/surprised.svg'
-			: '/img/magnifying-glass.svg';
+			? '/find-movies-app/img/surprised.svg'
+			: '/find-movies-app/img/magnifying-glass.svg';
 
 	return (
 		<Box

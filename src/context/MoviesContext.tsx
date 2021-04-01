@@ -52,7 +52,7 @@ export const MoviesProvider = ({ children }: PropsWithChildren<{}>) => {
 			const data: MovieResponse[] = [];
 			for (const movie of suggestedMovies) {
 				const resp = await fetch(
-					`http://www.omdbapi.com/?apikey=99c57d3&t=${movie}`
+					`https://www.omdbapi.com/?apikey=99c57d3&t=${movie}`
 				);
 				const body: MovieResponse = await resp.json();
 				data.push(body);
@@ -76,7 +76,7 @@ export const MoviesProvider = ({ children }: PropsWithChildren<{}>) => {
 		reset();
 		try {
 			const resp = await fetch(
-				`http://www.omdbapi.com/?apikey=99c57d3&s=${term}`
+				`https://www.omdbapi.com/?apikey=99c57d3&s=${term}`
 			);
 			const data: MoviesResponse = await resp.json();
 			if (data.Response === 'True') {
@@ -112,7 +112,7 @@ export const MoviesProvider = ({ children }: PropsWithChildren<{}>) => {
 	const searchMovie = async (id: string) => {
 		try {
 			const resp = await fetch(
-				`http://www.omdbapi.com/?apikey=99c57d3&i=${id}&plot=full`
+				`https://www.omdbapi.com/?apikey=99c57d3&i=${id}&plot=full`
 			);
 			const data: MovieResponse = await resp.json();
 			if (data.Response === 'True') {
