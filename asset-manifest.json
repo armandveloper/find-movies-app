@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/find-movies-app/static/css/main.c88ab79c.chunk.css",
+    "main.js": "/find-movies-app/static/js/main.b3885993.chunk.js",
+    "main.js.map": "/find-movies-app/static/js/main.b3885993.chunk.js.map",
+    "runtime-main.js": "/find-movies-app/static/js/runtime-main.fcfb0f7c.js",
+    "runtime-main.js.map": "/find-movies-app/static/js/runtime-main.fcfb0f7c.js.map",
+    "static/js/2.754196c8.chunk.js": "/find-movies-app/static/js/2.754196c8.chunk.js",
+    "static/js/2.754196c8.chunk.js.map": "/find-movies-app/static/js/2.754196c8.chunk.js.map",
+    "static/js/3.b231c31e.chunk.js": "/find-movies-app/static/js/3.b231c31e.chunk.js",
+    "static/js/3.b231c31e.chunk.js.map": "/find-movies-app/static/js/3.b231c31e.chunk.js.map",
+    "index.html": "/find-movies-app/index.html",
+    "static/css/main.c88ab79c.chunk.css.map": "/find-movies-app/static/css/main.c88ab79c.chunk.css.map",
+    "static/js/2.754196c8.chunk.js.LICENSE.txt": "/find-movies-app/static/js/2.754196c8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fcfb0f7c.js",
+    "static/js/2.754196c8.chunk.js",
+    "static/css/main.c88ab79c.chunk.css",
+    "static/js/main.b3885993.chunk.js"
+  ]
+}
