@@ -72,7 +72,7 @@ export const MoviesProvider = ({ children }: PropsWithChildren<{}>) => {
 		}
 	}, []);
 
-	const searchMovies = async (term: string) => {
+	const searchMovies = useCallback(async (term: string) => {
 		reset();
 		try {
 			const resp = await fetch(
@@ -107,7 +107,7 @@ export const MoviesProvider = ({ children }: PropsWithChildren<{}>) => {
 				data: null,
 			});
 		}
-	};
+	}, []);
 
 	const searchMovie = async (id: string) => {
 		try {

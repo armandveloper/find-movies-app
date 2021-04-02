@@ -69,7 +69,9 @@ function MovieCard(props: CardProps) {
 						component="img"
 						alt={Title}
 						image={
-							Poster === 'N/A' ? '/img/not-available.jpg' : Poster
+							Poster === 'N/A'
+								? '/find-movies-app/img/not-available.jpg'
+								: Poster
 						}
 						title={Title}
 					/>
