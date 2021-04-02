@@ -42,7 +42,7 @@ function MovieCard(props: CardProps) {
 							alt={Title}
 							image={
 								Poster === 'N/A'
-									? '/img/not-available.jpg'
+									? '/find-movies-app/img/not-available.jpg'
 									: Poster
 							}
 							title={Title}

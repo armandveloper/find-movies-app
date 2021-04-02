@@ -98,20 +98,30 @@ function Movie() {
 				<CloseIcon />
 			</IconButton>
 			<div className="movie-dialog__grid">
-				<img src={Poster} alt={Title} className="movie-dialog__media" />
+				<img
+					src={
+						Poster === 'N/A'
+							? '/find-movies-app/img/not-available.jpg'
+							: Poster
+					}
+					alt={Title}
+					className="movie-dialog__media"
+				/>
 				<div className="movie-dialog__top">
 					<h1>{Title}</h1>
 					<div className="movie-dialog__meta">
 						<span>{Released}</span>
-						<span>
-							<StarIcon
-								style={{
-									color: '#FFD560',
-									marginRight: '0.4rem',
-								}}
-							/>
-							{Ratings[0].Value}
-						</span>
+						{Ratings.length > 0 && (
+							<span>
+								<StarIcon
+									style={{
+										color: '#FFD560',
+										marginRight: '0.4rem',
+									}}
+								/>
+								{Ratings[0]?.Value}
+							</span>
+						)}
 					</div>
 				</div>
 				<div className="movie-dialog__main">
