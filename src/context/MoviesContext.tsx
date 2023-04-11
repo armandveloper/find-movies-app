@@ -2,6 +2,7 @@ import { createContext, PropsWithChildren, useCallback, useState } from 'react';
 import { MoviesResponse, Search } from '../interfaces/movies.interface';
 import { MovieResponse } from '../interfaces/movie.interface';
 import { suggestedMovies } from '../data/suggest-movies';
+import * as moviesService from '../services/movies'
 
 interface MovieError {
 	type: string;
@@ -72,13 +73,10 @@ export const MoviesProvider = ({ children }: PropsWithChildren<{}>) => {
 		}
 	}, []);
 
-	const searchMovies = useCallback(async (term: string) => {
+	const searchMovies = useCallback(async (query: string) => {
 		reset();
 		try {
-			const resp = await fetch(
-				`https://www.omdbapi.com/?apikey=99c57d3&s=${term}`
-			);
-			const data: MoviesResponse = await resp.json();
+			const data = await moviesService.searchMovie(query);
 			if (data.Response === 'True') {
 				return setMovies({
 					loading: false,
