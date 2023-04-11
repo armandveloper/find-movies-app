@@ -8,13 +8,13 @@ interface MovieListProps {
 }
 
 function MovieList({ movies }: MovieListProps) {
-	return (
-		<Grid container spacing={3}>
-			{movies?.map((movie: Search | MovieResponse) => (
-				<MovieCard key={movie.imdbID} {...movie} />
-			))}
-		</Grid>
-	);
+  return (
+    <Grid container spacing={3}>
+      {movies?.map((movie: Search | MovieResponse) => (
+        <MovieCard key={movie.imdbID} {...movie} />
+      ))}
+    </Grid>
+  );
 }
 
 export default MovieList;

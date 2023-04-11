@@ -14,75 +14,75 @@ interface CardProps {
 }
 
 function MovieCard(props: CardProps) {
-	const { searchMovie, setMovieLoading } = useContext(MoviesContext);
+  const { searchMovie, setMovieLoading } = useContext(MoviesContext);
 
-	const isSuggested = instanceOfMovieResponse(props);
+  const isSuggested = instanceOfMovieResponse(props);
 
-	const { imdbID, Poster, Title, Year } = props;
+  const { imdbID, Poster, Title, Year } = props;
 
-	const handleMovieSearch = () => {
-		setMovieLoading();
-		searchMovie(imdbID);
-	};
+  const handleMovieSearch = () => {
+    setMovieLoading();
+    searchMovie(imdbID);
+  };
 
-	if (isSuggested) {
-		return (
-			<Grid
-				item
-				xs={6}
-				sm={4}
-				lg={3}
-				className="movie"
-				onClick={handleMovieSearch}
-			>
-				<Card>
-					<div className="movie__img">
-						<CardMedia
-							component="img"
-							alt={Title}
-							image={
-								Poster === 'N/A'
-									? '/find-movies-app/img/not-available.jpg'
-									: Poster
-							}
-							title={Title}
-						/>
-					</div>
-				</Card>
-			</Grid>
-		);
-	}
+  if (isSuggested) {
+    return (
+      <Grid
+        item
+        xs={6}
+        sm={4}
+        lg={3}
+        className="movie"
+        onClick={handleMovieSearch}
+      >
+        <Card>
+          <div className="movie__img">
+            <CardMedia
+              component="img"
+              alt={Title}
+              image={
+                Poster === 'N/A'
+                  ? '/find-movies-app/img/not-available.jpg'
+                  : Poster
+              }
+              title={Title}
+            />
+          </div>
+        </Card>
+      </Grid>
+    );
+  }
 
-	return (
-		<Grid
-			item
-			xs={12}
-			sm={6}
-			md={4}
-			lg={3}
-			className="movie movie--with-content"
-			onClick={handleMovieSearch}
-		>
-			<Card>
-				<div className="movie__img">
-					<CardMedia
-						component="img"
-						alt={Title}
-						image={
-							Poster === 'N/A'
-								? '/find-movies-app/img/not-available.jpg'
-								: Poster
-						}
-						title={Title}
-					/>
-				</div>
-				<CardContent>
-					<h3 className="movie__title">{Title}</h3>
-					<p className="movie__year">({Year})</p>
-				</CardContent>
-			</Card>
-		</Grid>
-	);
+  return (
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      lg={3}
+      className="movie movie--with-content"
+      onClick={handleMovieSearch}
+    >
+      <Card>
+        <div className="movie__img">
+          <CardMedia
+            component="img"
+            alt={Title}
+            image={
+              Poster === 'N/A'
+                ? '/find-movies-app/img/not-available.jpg'
+                : Poster
+            }
+            title={Title}
+          />
+        </div>
+        <CardContent>
+          <h3 className="movie__title">{Title}</h3>
+          <p className="movie__year">({Year})</p>
+        </CardContent>
+      </Card>
+    </Grid>
+  );
 }
 
 export default MovieCard;

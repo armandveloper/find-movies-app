@@ -1,5 +1,5 @@
-import { MovieResponse } from "../interfaces/movie.interface";
-import { MoviesResponse } from "../interfaces/movies.interface";
+import { MovieResponse } from '../interfaces/movie.interface';
+import { MoviesResponse } from '../interfaces/movies.interface';
 
 const baseUrl = 'https://www.omdbapi.com/?apikey=99c57d3';
 

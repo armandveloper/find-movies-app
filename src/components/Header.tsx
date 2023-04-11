@@ -1,5 +1,5 @@
-import Container  from "@material-ui/core/Container";
-import Searchbox from "./Searchbox";
+import Container  from '@material-ui/core/Container';
+import Searchbox from './Searchbox';
 
 function Header() {
   return (
@@ -10,7 +10,7 @@ function Header() {
       </Container>
 
     </header>
-  )
+  );
 }
 
 export default Header;
