@@ -109,10 +109,7 @@ export const MoviesProvider = ({ children }: PropsWithChildren<{}>) => {
 
 	const searchMovie = async (id: string) => {
 		try {
-			const resp = await fetch(
-				`https://www.omdbapi.com/?apikey=99c57d3&i=${id}&plot=full`
-			);
-			const data: MovieResponse = await resp.json();
+			const data = await moviesService.getMovieById(id);
 			if (data.Response === 'True') {
 				return setActiveMovie({ loading: false, error: null, data });
 			}
