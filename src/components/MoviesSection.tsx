@@ -7,15 +7,15 @@ import { MoviesContext } from '../context/MoviesContext';
 import { instanceOfMovieResponse } from '../helpers/type-guards';
 
 function MoviesSection() {
-	const { getSuggestedMovies, movies } = useContext(MoviesContext);
+	const { getFeaturedMovies, movies } = useContext(MoviesContext);
 
 	const isFirstRender = movies.data
 		? instanceOfMovieResponse(movies.data[0])
 		: false;
 
 	useEffect(() => {
-		getSuggestedMovies();
-	}, [getSuggestedMovies]);
+		getFeaturedMovies();
+	}, [getFeaturedMovies]);
 
 	return (
 		<main>

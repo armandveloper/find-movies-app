@@ -25,7 +25,7 @@ interface MoviesContextInterface {
 	movies: MoviesState;
 	activeMovie: MovieState | null;
 	searchMovies(term: string): void;
-	getSuggestedMovies(): void;
+	getFeaturedMovies(): void;
 	searchMovie(id: string): void;
 	unsetActiveMovie(): void;
 	setMovieLoading(): void;
@@ -48,17 +48,14 @@ export const MoviesProvider = ({ children }: PropsWithChildren<{}>) => {
 
 	const reset = () => setMovies(initState);
 
-	const getSuggestedMovies = useCallback(async () => {
+	const getFeaturedMovies = useCallback(async () => {
 		try {
-			const data: MovieResponse[] = [];
-			for (const movie of suggestedMovies) {
-				const resp = await fetch(
-					`https://www.omdbapi.com/?apikey=99c57d3&t=${movie}`
-				);
-				const body: MovieResponse = await resp.json();
-				data.push(body);
+			const featuredMovies: MovieResponse[] = [];
+			for (const movieTitle of suggestedMovies) {
+				const movie = await moviesService.getMovieByTitle(movieTitle)
+				featuredMovies.push(movie);
 			}
-			setMovies({ loading: false, error: null, data });
+			setMovies({ loading: false, error: null, data: featuredMovies });
 		} catch (err) {
 			console.log(err);
 			setMovies({
@@ -147,7 +144,7 @@ export const MoviesProvider = ({ children }: PropsWithChildren<{}>) => {
 				movies,
 				activeMovie,
 				searchMovies,
-				getSuggestedMovies,
+				getFeaturedMovies,
 				searchMovie,
 				unsetActiveMovie,
 				setMovieLoading,

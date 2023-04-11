@@ -12,3 +12,8 @@ export async function getMovieById(id: string): Promise<MovieResponse> {
   const response = await fetch(`${baseUrl}&i=${id}&plot=full`);
   return response.json();
 }
+
+export async function getMovieByTitle(title: string): Promise<MovieResponse> {
+  const response = await fetch(`${baseUrl}&t=${title}`);
+  return response.json();
+}
